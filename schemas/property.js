@@ -16,6 +16,7 @@ export default {
       {
         name: "propertyType",
         title: "Property Type",
+        type: 'string',
         options:{
             list:[
                 {
@@ -34,18 +35,57 @@ export default {
                     title: 'Boutieque',
                     value: 'bed-and-breakfest'
                 },
-            ]
+            ],
+            layout: 'radio'
         }
       },
       {
-        name: "location",
-        title: "Location",
-        type: "geopoint",
+        name: 'mainImage',
+        title: 'Main Image',
+        type: 'image',
+        options : {
+          hotspot: true
+        }
       },
       {
-        name: "location",
-        title: "Location",
-        type: "geopoint",
+        name: 'images',
+        title: 'Images',
+        type: 'array',
+        of: [{type: 'propertyImage'}]
+      }, 
+      {
+        name: 'pricePerNight',
+        title: 'Price Per Night',
+        type: 'number'
+      },
+      {
+        name: 'beds',
+        title: 'Beds',
+        type: 'number'
+      },
+      {
+        name: 'bedrooms',
+        title: 'Bedrooms',
+        type: 'number'
+      },
+      {
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        options : {
+          source: 'title',
+          maxLength: 100
+        },
+      },
+      {
+        name: 'id',
+        title: 'ID',
+        type: 'number'
+      },
+      {
+        name: 'description',
+        title: 'Description',
+        type: 'string'
       },
   ],
 };
